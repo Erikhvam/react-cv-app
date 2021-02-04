@@ -10,7 +10,7 @@ export const About = () => {
 					<h1>Curriculum Vitae</h1>
 				</div>
 				<div className="about">
-					<div className="about__left">
+					<div className="about__box">
 						<h2>Skole</h2>
 						<div className="image1">
 							<img
@@ -34,7 +34,7 @@ export const About = () => {
 						</div>
 					</div>
 
-					<div className="about__right">
+					<div className="about__box">
 						<h2>Arbeidserfaring</h2>
 						<div className="image2">
 							<img

@@ -5,8 +5,32 @@
 	}
 }
 
-.about__left > h2 {
-	text-align: center;
+.about {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	font-size: 1rem;
+
+	@media (min-width: 992px) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-self: normal;
+		margin-top: 100px;
+		width: auto;
+	}
+
+	&__box {
+		> h2 {
+			text-align: center;
+			padding-top: 20px;
+		}
+		@media (min-width: 992px) {
+			width: auto;
+			align-self: flex-end;
+			text-align: center;
+		}
+	}
 }
 
 .about__right > h2 {
