@@ -1,0 +1,149 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	@media (min-width: 992px) {
+		scroll-snap-type: y mandatory;
+	}
+}
+
+body {
+	font-family: "Quicksand", sans-serif;
+	line-height: 1.6;
+	height: 100vh;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+	// overflow: hidden;
+	// overflow-y: scroll;
+}
+
+// section:first-of-type {
+// 	margin-top: 64px;
+// }
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	// text-align: center;
+	width: 100%;
+	height: auto;
+	scroll-snap-align: center;
+	padding: 45px 0;
+	@media (min-width: 992px) {
+		height: 100vh;
+		padding: 0;
+	}
+}
+
+h1 {
+	text-align: center;
+}
+
+.content-wrap {
+	width: 95%;
+	@media (min-width: 992px) {
+		width: 60%;
+	}
+}
+
+.columns {
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 992px) {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	&__left {
+		@media (min-width: 992px) {
+			width: 48%;
+			padding-top: 25px;
+		}
+	}
+	&__right {
+		font-size: 1rem;
+		@media (min-width: 992px) {
+			width: 48%;
+			padding-left: 10px;
+			font-size: 1.5rem;
+			h1 {
+				text-align: left;
+				align-self: flex-start;
+			}
+		}
+	}
+	// h1 {
+	// 	text-align: left;
+	// 	align-self: flex-start;
+	// }
+}
+
+.about {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	font-size: 1rem;
+
+	@media (min-width: 992px) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-self: normal;
+		margin-top: 100px;
+		width: auto;
+	}
+
+	&__left {
+		@media (min-width: 992px) {
+			width: auto;
+		}
+	}
+	&__right {
+		@media (min-width: 992px) {
+			width: auto;
+		}
+	}
+}
+
+section:nth-child(even) {
+	background-color: rgb(236, 236, 236);
+	color: black;
+	padding-top: 70px;
+}
+
+section:nth-child(odd) {
+	background-color: #333;
+	color: white;
+	padding-top: 70px;
+}
+
+section h1 {
+	font-size: 2rem;
+	@media (min-width: 992px) {
+		font-size: 4rem;
+	}
+}
+
+// section p {
+// 	font-size: 1rem;
+// 	@media (min-width: 992px) {
+// 		font-size: 1.5rem;
+// 	}
+// }
+
+// section p .image__description2 {
+// 	text-align: center;
+// 	font-size: 1rem;
+// 	margin-top: 0.25em;
+// }
