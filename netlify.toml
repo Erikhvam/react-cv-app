@@ -1,9 +1,6 @@
 [build]
     functions = "functions"
-
-[[build.environment]]
-email = erikhvamdev
-password = Danebu123
+    environment = { email = "erikhvamdev@gmail.com, password = "Danebu123" }
 
 [[redirects]]
     from = "/api/*"
