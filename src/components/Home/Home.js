@@ -23,7 +23,7 @@ export const Home = () => {
 								slutten av 2020 bestemte jeg meg for å lære meg å programmere,
 								da det er noe jeg har ønsket å jobbe med lenge. Språk jeg
 								fokuserer på er JavaScript og React, men målet er å bli en
-								fullstack-utvikler. Hobbyer er mat, spill og musikk.
+								fullstack-utvikler. Hobbyer er git mat, spill og musikk.
 							</p>
 						</div>
 					</div>

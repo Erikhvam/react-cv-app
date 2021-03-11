@@ -46,7 +46,7 @@ export default function Form() {
 					setData({
 						...data,
 						sent: true,
-						buttonText: "Sent",
+						buttonText: "Sendt",
 						err: "success",
 					});
 					setTimeout(() => {
