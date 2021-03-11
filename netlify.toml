@@ -1,8 +1,7 @@
 [build]
     functions = "functions"
-    environment = { email = "erikhvamdev@gmail.com, password = "Danebu123" }
 
 [[redirects]]
     from = "/api/*"
-    to = "/.netlify/functions/:splat"
+    to = "https://www.erikhvam.no/.netlify/functions/sendmail"
     status = 200
