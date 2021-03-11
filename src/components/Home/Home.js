@@ -21,9 +21,10 @@ export const Home = () => {
 							<p>
 								Hei. Jeg er en aspirerende utvikler som ønsker å bli bedre. I
 								slutten av 2020 bestemte jeg meg for å lære meg å programmere,
-								da det er noe jeg har ønsket meg å jobbe med lenge. Språk jeg
-								fokuserer på er JavaScript og React. Som hobbyer liker jeg å
-								lage mat, spill og musikk.
+								da det er noe jeg har ønsket å jobbe med lenge. Språk jeg
+								fokuserer på er JavaScript og React, men målet er å bli en
+								fullstack-utvikler. Som hobbyer liker jeg å lage mat, spill og
+								musikk.
 							</p>
 						</div>
 					</div>
