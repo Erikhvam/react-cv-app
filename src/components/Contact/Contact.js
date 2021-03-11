@@ -30,7 +30,7 @@ export default function Form() {
 		});
 
 		axios
-			.post("/api/sendmail", data)
+			.post("https://www.erikhvam.no/api/sendmail", data)
 			.then((res) => {
 				if (res.data.result !== "success") {
 					setData({
