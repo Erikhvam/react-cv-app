@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/Home/Home.js";
 import About from "./components/About/About.js";
 import Services from "./components/Services/Services.js";
-import ContactForm from "./components/Contact/Contact.js";
+import Form from "./components/Contact/Contact.js";
 
 const App = () => {
 	return (
@@ -14,7 +14,7 @@ const App = () => {
 			<Home />
 			<About />
 			<Services />
-			<ContactForm />
+			<Form />
 		</div>
 	);
 };

@@ -2,43 +2,77 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Contact.scss";
 
-const ContactForm = () => {
-	const [content, setContent] = useState({
+export default function Form() {
+	const [data, setData] = useState({
 		name: "",
 		email: "",
 		subject: "",
 		message: "",
+		sent: false,
+		buttonText: "Send",
+		err: "",
 	});
 
-	const [result, setResult] = useState(null);
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setData({
+			...data,
+			[name]: value,
+		});
+	};
 
-	const sendEmail = (event) => {
-		event.preventDefault();
+	const formSubmit = (e) => {
+		e.preventDefault();
+
+		setData({
+			...data,
+			buttonText: "Sender...",
+		});
+
 		axios
-			.post("/send", { ...content })
-			.then((response) => {
-				setResult(response.data);
-				setContent({
-					name: "",
-					email: "",
-					subject: "",
-					message: "",
-				});
+			.post("/api/sendmail", data)
+			.then((res) => {
+				if (res.data.result !== "success") {
+					setData({
+						...data,
+						buttonText: "Feil ved sending..",
+						sent: false,
+						err: "fail",
+					});
+					setTimeout(() => {
+						resetForm();
+					}, 6000);
+				} else {
+					setData({
+						...data,
+						sent: true,
+						buttonText: "Sent",
+						err: "success",
+					});
+					setTimeout(() => {
+						resetForm();
+					}, 6000);
+				}
 			})
-			.catch(() => {
-				setResult({
-					success: false,
-					message: "Something went wrong. Try again later",
+			.catch((err) => {
+				console.log(err.response.status);
+				setData({
+					...data,
+					buttonText: "Feil ved sending",
+					err: "fail",
 				});
 			});
 	};
 
-	const onInputChange = (event) => {
-		const { name, value } = event.target;
-
-		setContent({
-			...content,
-			[name]: value,
+	const resetForm = () => {
+		setData({
+			name: "",
+			email: "",
+			subject: "",
+			message: "",
+			sent: false,
+			buttonText: "Send",
+			err: "",
 		});
 	};
 
@@ -46,20 +80,14 @@ const ContactForm = () => {
 		<>
 			<section id="contact">
 				<h1>Kontakt</h1>
-				{result && (
-					<p className={`${result.success ? "success" : "error"}`}>
-						{result.message}
-					</p>
-				)}
-				<form onSubmit={sendEmail}>
+				<form>
 					<fieldset>
 						<label htmlFor="name">Fullt navn</label>
 						<input
 							type="text"
 							name="name"
-							value={content.name}
-							// placeholder="Fullt navn"
-							onChange={onInputChange}
+							value={data.name}
+							onChange={handleChange}
 						></input>
 					</fieldset>
 					<fieldset>
@@ -67,9 +95,8 @@ const ContactForm = () => {
 						<input
 							type="text"
 							name="email"
-							value={content.email}
-							// placeholder="Fyll ut din e-post"
-							onChange={onInputChange}
+							value={data.email}
+							onChange={handleChange}
 						></input>
 					</fieldset>
 					<fieldset>
@@ -77,25 +104,24 @@ const ContactForm = () => {
 						<input
 							type="text"
 							name="subject"
-							value={content.subject}
-							// placeholder="Fyll inn emne"
-							onChange={onInputChange}
+							value={data.subject}
+							onChange={handleChange}
 						></input>
 					</fieldset>
 					<fieldset>
 						<label htmlFor="subject">Beskjed</label>
 						<textarea
+							type="text"
 							name="message"
-							value={content.message}
-							// placeholder="Fyll inn din beskjed her"
-							onChange={onInputChange}
+							value={data.message}
+							onChange={handleChange}
 						></textarea>
 					</fieldset>
-					<button type="submit">Send</button>
+					<button type="submit" onClick={formSubmit}>
+						{data.buttonText}
+					</button>
 				</form>
 			</section>
 		</>
 	);
-};
-
-export default ContactForm;
+}
