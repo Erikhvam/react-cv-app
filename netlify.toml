@@ -1,8 +1,9 @@
 [build]
     functions = "functions"
 
-[context.production]
-    environment = { email = "erikhvamdev@gmail.com", password = "Danebu123" }
+[context.production.environment]
+    email = "erikhvamdev@gmail.com"
+    password = "Danebu123"
 
 [[redirects]]
     from = "/api/*"
