@@ -1,7 +1,7 @@
 [build]
     functions = "functions"
-    
-[build.environment]
+
+[[build.environment]]
 email = erikhvamdev
 password = Danebu123
 
