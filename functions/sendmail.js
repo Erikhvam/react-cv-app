@@ -7,8 +7,8 @@ exports.handler = function (event, context, callback) {
 		host: "smtp.gmail.com",
 		port: "587",
 		auth: {
-			user: process.env.email,
-			pass: process.env.password,
+			user: "erikhvamdev@gmail.com",
+			pass: "Danebu123",
 		},
 	});
 
