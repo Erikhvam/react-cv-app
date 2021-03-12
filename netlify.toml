@@ -3,5 +3,5 @@
 
 [[redirects]]
     from = "/api/*"
-    to = "https://www.erikhvam.no/.netlify/functions/sendmail"
+    to = "/.netlify/functions/:splat"
     status = 200
