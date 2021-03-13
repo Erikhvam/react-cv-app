@@ -4,7 +4,7 @@ exports.handler = function (event, context, callback) {
 	let data = JSON.parse(event.body);
 
 	let transporter = nodemailer.createTransport({
-		host: "smtp-mail.outlook.com",
+		host: "smtp.office365.com",
 		secureConnection: false,
 		port: "587",
 		auth: {
