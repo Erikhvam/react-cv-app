@@ -6,7 +6,7 @@ exports.handler = function (event, context, callback) {
 	let transporter = nodemailer.createTransport({
 		host: "smtp-mail.outlook.com",
 		secureConnection: false,
-		port: "465",
+		port: "587",
 		auth: {
 			user: process.env.email,
 			pass: process.env.password,
