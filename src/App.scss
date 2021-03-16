@@ -4,8 +4,16 @@
 	box-sizing: border-box;
 	@media (min-width: 992px) {
 		scroll-snap-type: y mandatory;
+		scroll-snap-stop: always;
+		scroll-snap-align:initial
 	}
 }
+
+// .App {
+// 	@media (min-width: 992px) {
+// 		scroll-snap-align: center;
+// 	}
+// }
 
 body {
 	font-family: "Quicksand", sans-serif;
@@ -20,7 +28,7 @@ body {
 }
 
 html {
-	scroll-behavior: smooth;
+	// scroll-behavior: smooth;
 	// overflow: hidden;
 	// overflow-y: scroll;
 }

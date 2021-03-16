@@ -11,7 +11,6 @@ export const About = () => {
 				</div>
 				<div className="about">
 					<div className="about__box">
-						<h2>Skole</h2>
 						<div className="image1">
 							<img
 								className="image__utdanning"
@@ -20,13 +19,18 @@ export const About = () => {
 							></img>
 							<div className="image__overlay image__overlay--primary">
 								<div className="image__description image__description-mobile">
+									<div className="image__header2">
+										<p>
+											<b>UTDANNING</b>
+										</p>
+									</div>
 									<p>
-										<b>August 2007 - Juni 2008</b>
+										<b>2007 - 2008</b>
 									</p>
 									<p>Nesbru Videregående Skole</p>
 									<br></br>
 									<p>
-										<b>August 2010 - Juni 2011</b>
+										<b>2010 - 2011</b>
 									</p>
 									<p>Bjørknes Privatskole</p>
 								</div>
@@ -35,7 +39,6 @@ export const About = () => {
 					</div>
 
 					<div className="about__box">
-						<h2>Arbeidserfaring</h2>
 						<div className="image2">
 							<img
 								className="image__jobberfaring"
@@ -44,33 +47,64 @@ export const About = () => {
 							></img>
 							<div className="image__overlay image__overlay--primary">
 								<div className="image__description2 image__description2-mobile">
-									<div className="">
+									<div className="image__header">
 										<p>
-											<b>Arbeid</b>
+											<b>ARBEIDSERFARING</b>
 										</p>
+									</div>
+									<div className="image__year">
+										<p>2009 – 2010</p>
+										<div className="image__subtext">
+											<p>Kasserer, Smart Club</p>
+										</div>
+									</div>
+									<div className="image__year">
+										<p>2014 - 2017</p>
+										<div className="image__subtext">
+											<p>Seniorrådgiver, Webhelp Nordic</p>
+										</div>
+									</div>
+									<div className="image__year">
+										<p>2017 - 2020</p>
+										<div className="image__subtext">
+											<p>Senior Technical Consultant, PasientSky AS</p>
+										</div>
+									</div>
+									<br></br>
+									<div className="image__subheader">
 										<p>
-											1. sept 2009 – 1. mai 2010: Kasserer, Smart Club Slependen
+											<b>ANNEN ERFARING</b>
 										</p>
+									</div>
+									<div className="image__year">
+										<p>2008</p>
+										<div className="image__subtext">
+											<p>Festivalmedarbeider ved Stavernsfestivalen</p>
+										</div>
+									</div>
+									<div className="image__year">
+										<p>2009</p>
+										<div className="image__subtext">
+											<p>Dugnadsmedarbeider for ROK</p>
+										</div>
+									</div>
+									<br></br>
+									<div className="image__subheader">
 										<p>
-											<p>
-												10. okt 2014 - 28. feb 2017: Seniorrådgiver, Webhelp
-												Nordic
-											</p>
-											1. mars 2017 - 1. sept 2020: Senior Technical Consultant,
-											PasientSky AS
+											<b>SPRÅK</b>
 										</p>
-										<br></br>
-										<p>
-											<b>Annen erfaring</b>
-										</p>
-										<p>April/Mai 2009: Dugnadsmedarbeider for ROK</p>
-										<p>Juli 2008: Festivalmedarbeider ved Stavernsfestivalen</p>
-										<br></br>
-										<p>
-											<b>Språk</b>
-										</p>
-										<p>Norsk: morsmål</p>
-										<p>Engelsk: svært godt</p>
+									</div>
+									<div className="image__year">
+										<p>NORSK</p>
+										<div className="image__subtext">
+											<p>Morsmål</p>
+										</div>
+									</div>
+									<div className="image__year">
+										<p>ENGELSK</p>
+										<div className="image__subtext">
+											<p>Svært godt</p>
+										</div>
 									</div>
 								</div>
 							</div>
