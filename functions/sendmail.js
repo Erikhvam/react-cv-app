@@ -16,53 +16,53 @@ const oAuth2Client = new google.auth.OAuth2(
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 exports.handler = async function (event, context, callback) {
-	let data = JSON.parse(event.body);
-	let accessToken;
 	try {
-		accessToken = await oAuth2Client.getAccessToken();
+		let data = JSON.parse(event.body);
+		let accessToken = await oAuth2Client.getAccessToken();
+		console.log("accessToken: ", accessToken);
+		let transporter = nodemailer.createTransport({
+			service: "gmail",
+			auth: {
+				type: "OAuth2",
+				user: "erikhvamdev@gmail.com",
+				clientId: CLIENT_ID,
+				clientSecret: CLIENT_SECRET,
+				refreshToken: REFRESH_TOKEN,
+				accessToken: accessToken,
+				// pass: process.env.password,
+			},
+		});
+
+		transporter.sendMail(
+			{
+				from: `${data.email}`,
+				to: "erikhvamdev@gmail.com",
+				subject: `${data.subject}`,
+				html: `
+				<h3>Epost fra ${data.name}. Epost: ${data.email}<h3>
+				<p>Emne: ${data.subject}<p>
+				<p>Beskjed: ${data.message}<p>
+				`,
+			},
+			function (error, info) {
+				if (error) {
+					callback(error);
+					console.log(error);
+				} else {
+					console.log("success");
+					callback(null, {
+						statusCode: 200,
+						body: JSON.stringify({
+							result: "success",
+						}),
+					});
+					console.log(callback);
+					console.log("yep");
+				}
+			}
+		);
 	} catch (error) {
+		console.log("Error");
 		console.log(error);
 	}
-
-	let transporter = nodemailer.createTransport({
-		service: "gmail",
-		auth: {
-			type: "OAuth2",
-			user: "erikhvamdev@gmail.com",
-			clientId: CLIENT_ID,
-			clientSecret: CLIENT_SECRET,
-			refreshToken: REFRESH_TOKEN,
-			accessToken: accessToken,
-			// pass: process.env.password,
-		},
-	});
-
-	transporter.sendMail(
-		{
-			from: `${data.email}`,
-			to: "erikhvamdev@gmail.com",
-			subject: `${data.subject}`,
-			html: `
-            <h3>Epost fra ${data.name}. Epost: ${data.email}<h3>
-            <p>Emne: ${data.subject}<p>
-            <p>Beskjed: ${data.message}<p>
-            `,
-		},
-		function (error, info) {
-			if (error) {
-				callback(error);
-				console.log(error);
-			} else {
-				console.log("success");
-				callback(null, {
-					statusCode: 200,
-					body: JSON.stringify({
-						result: "success",
-					}),
-				});
-				console.log(callback);
-				console.log("yep");
-			}
-		}
-	);
 };

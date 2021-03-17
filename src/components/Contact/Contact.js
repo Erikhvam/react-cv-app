@@ -33,17 +33,18 @@ export default function Form() {
 			.post("/api/sendmail", data)
 			.then((res) => {
 				console.log(res);
-				if (res.data.result !== "success") {
-					console.log("success");
+				console.log("res.status: ", res.status);
+				if (res.status !== 200) {
+					console.log("ikke success");
 					setData({
 						...data,
 						buttonText: "Feil ved sending..",
 						sent: false,
 						err: "fail",
 					});
-					setTimeout(() => {
-						resetForm();
-					}, 6000);
+					// setTimeout(() => {
+					// 	resetForm();
+					// }, 6000);
 				} else {
 					setData({
 						...data,
@@ -51,13 +52,15 @@ export default function Form() {
 						buttonText: "Sendt",
 						err: "success",
 					});
-					setTimeout(() => {
-						resetForm();
-					}, 6000);
+					// setTimeout(() => {
+					// 	resetForm();
+					// }, 6000);
 				}
 			})
 			.catch((err) => {
+				console.log("contact.js catch");
 				console.log(err.response.status);
+				console.log(err);
 				setData({
 					...data,
 					buttonText: "Feil ved sending",
