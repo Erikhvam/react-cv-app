@@ -17,7 +17,12 @@ oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 exports.handler = async function (event, context, callback) {
 	let data = JSON.parse(event.body);
-	const accessToken = await oAuth2Client.getAccessToken();
+	let accessToken;
+	try {
+		accessToken = await oAuth2Client.getAccessToken();
+	} catch (error) {
+		console.log(error);
+	}
 
 	let transporter = nodemailer.createTransport({
 		service: "gmail",
@@ -46,6 +51,7 @@ exports.handler = async function (event, context, callback) {
 		function (error, info) {
 			if (error) {
 				callback(error);
+				console.log(error);
 			} else {
 				console.log("success");
 				callback(null, {
@@ -55,6 +61,7 @@ exports.handler = async function (event, context, callback) {
 					}),
 				});
 				console.log(callback);
+				console.log("yep");
 			}
 		}
 	);
