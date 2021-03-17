@@ -47,12 +47,14 @@ exports.handler = async function (event, context, callback) {
 			if (error) {
 				callback(error);
 			} else {
+				console.log("success");
 				callback(null, {
 					statusCode: 200,
 					body: JSON.stringify({
 						result: "success",
 					}),
 				});
+				console.log(callback);
 			}
 		}
 	);
