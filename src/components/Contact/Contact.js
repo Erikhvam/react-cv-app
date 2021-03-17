@@ -69,17 +69,17 @@ export default function Form() {
 			});
 	};
 
-	const resetForm = () => {
-		setData({
-			name: "",
-			email: "",
-			subject: "",
-			message: "",
-			sent: false,
-			buttonText: "Send",
-			err: "",
-		});
-	};
+	// const resetForm = () => {
+	// 	setData({
+	// 		name: "",
+	// 		email: "",
+	// 		subject: "",
+	// 		message: "",
+	// 		sent: false,
+	// 		buttonText: "Send",
+	// 		err: "",
+	// 	});
+	// };
 
 	return (
 		<>
