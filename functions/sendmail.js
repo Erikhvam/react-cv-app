@@ -18,6 +18,7 @@ oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 exports.handler = async function (event, context, callback) {
 	try {
 		let data = JSON.parse(event.body);
+		console.log(data);
 		let accessToken = await oAuth2Client.getAccessToken();
 		console.log("accessToken: ", accessToken);
 		let transporter = nodemailer.createTransport({
@@ -44,13 +45,13 @@ exports.handler = async function (event, context, callback) {
 				<p>Beskjed: ${data.message}<p>
 				`,
 			},
-			function (error, info) {
+			async function (error, info) {
 				if (error) {
-					callback(error);
+					await callback(error);
 					console.log(error);
 				} else {
 					console.log("success");
-					callback(null, {
+					await callback(null, {
 						statusCode: 200,
 						body: JSON.stringify({
 							result: "success",
