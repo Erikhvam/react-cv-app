@@ -8,7 +8,7 @@ const REDIRECT_URI = "https://developers.google.com/oauthplayground";
 const REFRESH_TOKEN =
 	"1//04ozVHfJInJ-QCgYIARAAGAQSNwF-L9Irq50I-XKNdqE7eRi8gnV60FTE1lYxGhjQ8YOifHrObVamLxQs5wcMQcMldbcJLG5uK7w";
 
-const oAuth2Client = new google.auth.oAuth2(
+const oAuth2Client = new google.auth.OAuth2(
 	CLIENT_ID,
 	CLIENT_SECRET,
 	REDIRECT_URI
@@ -16,21 +16,22 @@ const oAuth2Client = new google.auth.oAuth2(
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 exports.handler = async function (event, context, callback) {
-	let data = JSON.parse(event.body);
-	const accessToken = await oAuth2Client.getAccessToken();
-
-	let transporter = nodemailer.createTransport({
-		service: "gmail",
-		auth: {
-			type: "OAuth2",
-			clientId: CLIENT_ID,
-			clientSecret: CLIENT_SECRET,
-			refreshToken: REFRESH_TOKEN,
-			accessToken: accessToken,
-			user: process.env.email,
-			// pass: process.env.password,
-		},
-	});
+	try {
+		let data = JSON.parse(event.body);
+		const accessToken = await oAuth2Client.getAccessToken();
+	
+		let transporter = nodemailer.createTransport({
+			service: "gmail",
+			auth: {
+				type: "OAuth2",
+				user: process.env.email,
+				clientId: CLIENT_ID,
+				clientSecret: CLIENT_SECRET,
+				refreshToken: REFRESH_TOKEN,
+				accessToken: accessToken,
+				// pass: process.env.password,
+			},
+		});
 
 	transporter.sendMail(
 		{
