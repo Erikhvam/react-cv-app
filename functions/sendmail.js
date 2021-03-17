@@ -23,7 +23,7 @@ exports.handler = async function (event, context, callback) {
 		service: "gmail",
 		auth: {
 			type: "OAuth2",
-			user: process.env.email,
+			user: "erikhvamdev@gmail.com",
 			clientId: CLIENT_ID,
 			clientSecret: CLIENT_SECRET,
 			refreshToken: REFRESH_TOKEN,
