@@ -53,7 +53,7 @@ export const About = () => {
 										</p>
 									</div>
 									<div className="image__year">
-										<p>2009 – 2010</p>
+										<p>2009 - 2010</p>
 										<div className="image__subtext">
 											<p>Kasserer, Smart Club</p>
 										</div>

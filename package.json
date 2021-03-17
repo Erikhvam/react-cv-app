@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.19.2",
     "express": "^4.17.1",
+    "googleapis": "^67.1.1",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
