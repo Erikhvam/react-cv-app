@@ -6,7 +6,7 @@ const CLIENT_ID =
 const CLIENT_SECRET = "ec1CVJhCO06Mtd8R_kEWIueu";
 const REDIRECT_URI = "https://developers.google.com/oauthplayground";
 const REFRESH_TOKEN =
-	"1//04ozVHfJInJ-QCgYIARAAGAQSNwF-L9Irq50I-XKNdqE7eRi8gnV60FTE1lYxGhjQ8YOifHrObVamLxQs5wcMQcMldbcJLG5uK7w";
+	"1//040xPIGjhysoGCgYIARAAGAQSNwF-L9IrWhQ6P_6vpE_GcGsez_l92CLwqTZ4tuFvlVH9x_yX-dhRYY98vSsBv3BEMZRsG73W7rg";
 
 const oAuth2Client = new google.auth.OAuth2(
 	CLIENT_ID,
@@ -43,6 +43,7 @@ exports.handler = async (event) => {
 				from: "erikhvamdev@gmail.com",
 				to: "erikhvamdev@gmail.com",
 				subject: `${data.subject}`,
+				text: `${data.message}`,
 				html: `
 				<h3>Epost fra ${data.name}. Epost: ${data.email}<h3>
 				<p>Emne: ${data.subject}<p>
