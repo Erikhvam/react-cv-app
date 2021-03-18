@@ -33,7 +33,7 @@ exports.handler = async (event, context, callback) => {
 				// pass: process.env.password,
 			},
 		});
-
+		console.log("hei");
 		transporter.sendMail(
 			{
 				from: `${data.email}`,
@@ -45,7 +45,7 @@ exports.handler = async (event, context, callback) => {
 				<p>Beskjed: ${data.message}<p>
 				`,
 			},
-			(error, info) => {
+			function (error, info) {
 				if (error) {
 					console.log("Hallo");
 					callback(error);
