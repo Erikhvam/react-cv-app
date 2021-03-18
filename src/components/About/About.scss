@@ -170,7 +170,9 @@
 }
 
 .image__year > p {
-	width: 85px;
+	@media (min-width: 992px) {
+		width: 85px;
+	}
 }
 
 .image__subtext {
