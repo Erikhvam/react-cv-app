@@ -21,23 +21,21 @@ exports.handler = async (event) => {
 		console.log(data);
 		let accessToken = await oAuth2Client.getAccessToken();
 		console.log("accessToken: ", accessToken);
-		let transporter = nodemailer.createTransport(
-			smtpTransport({
-				name: "erikhvamdev",
-				host: "smtp.gmail.com",
-				port: "587",
-				secure: true,
-				auth: {
-					type: "OAuth2",
-					user: "erikhvamdev@gmail.com",
-					clientId: CLIENT_ID,
-					clientSecret: CLIENT_SECRET,
-					refreshToken: REFRESH_TOKEN,
-					accessToken: accessToken,
-					// pass: process.env.password,
-				},
-			})
-		);
+		let transporter = nodemailer.createTransport({
+			// name: "erikhvamdev",
+			host: "smtp.gmail.com",
+			port: "587",
+			secure: true,
+			auth: {
+				type: "OAuth2",
+				user: "erikhvamdev@gmail.com",
+				clientId: CLIENT_ID,
+				clientSecret: CLIENT_SECRET,
+				refreshToken: REFRESH_TOKEN,
+				accessToken: accessToken,
+				// pass: process.env.password,
+			},
+		});
 		console.log("hei");
 		transporter.sendMail(
 			{
