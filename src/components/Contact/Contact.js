@@ -42,9 +42,9 @@ export default function Form() {
 						sent: false,
 						err: "fail",
 					});
-					// setTimeout(() => {
-					// 	resetForm();
-					// }, 6000);
+					setTimeout(() => {
+						resetForm();
+					}, 6000);
 				} else {
 					setData({
 						...data,
@@ -52,9 +52,9 @@ export default function Form() {
 						buttonText: "Sendt",
 						err: "success",
 					});
-					// setTimeout(() => {
-					// 	resetForm();
-					// }, 6000);
+					setTimeout(() => {
+						resetForm();
+					}, 6000);
 				}
 			})
 			.catch((err) => {
@@ -69,17 +69,17 @@ export default function Form() {
 			});
 	};
 
-	// const resetForm = () => {
-	// 	setData({
-	// 		name: "",
-	// 		email: "",
-	// 		subject: "",
-	// 		message: "",
-	// 		sent: false,
-	// 		buttonText: "Send",
-	// 		err: "",
-	// 	});
-	// };
+	const resetForm = () => {
+		setData({
+			name: "",
+			email: "",
+			subject: "",
+			message: "",
+			sent: false,
+			buttonText: "Send",
+			err: "",
+		});
+	};
 
 	return (
 		<>

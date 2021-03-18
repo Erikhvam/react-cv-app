@@ -45,21 +45,19 @@ exports.handler = async (event, context, callback) => {
 				<p>Beskjed: ${data.message}<p>
 				`,
 			},
-			async (error, info) => {
+			(error, info) => {
 				if (error) {
-					await callback(error);
+					console.log("Hallo");
+					callback(error);
 					console.log(error);
 				} else {
 					console.log("success");
-					return (
-						null,
-						{
-							statusCode: 200,
-							body: JSON.stringify({
-								result: "success",
-							}),
-						}
-					);
+					callback(null, {
+						statusCode: 200,
+						body: JSON.stringify({
+							result: "success",
+						}),
+					});
 				}
 			}
 		);
