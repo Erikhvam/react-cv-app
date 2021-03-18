@@ -32,10 +32,7 @@ export default function Form() {
 		axios
 			.post("/api/sendmail", data)
 			.then((res) => {
-				console.log(res);
-				console.log("res.status: ", res.status);
 				if (res.status !== 200) {
-					console.log("ikke success");
 					setData({
 						...data,
 						buttonText: "Feil ved sending..",
@@ -58,9 +55,6 @@ export default function Form() {
 				}
 			})
 			.catch((err) => {
-				console.log("contact.js catch");
-				console.log(err.response.status);
-				console.log(err);
 				setData({
 					...data,
 					buttonText: "Feil ved sending",

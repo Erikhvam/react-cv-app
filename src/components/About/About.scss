@@ -166,8 +166,11 @@
 		font-size: 0.75em;
 		margin-top: 0.25em;
 		align-items: center;
-		justify-content: space-between;
 	}
+}
+
+.image__year > p {
+	width: 85px;
 }
 
 .image__subtext {

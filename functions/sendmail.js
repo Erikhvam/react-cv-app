@@ -20,17 +20,9 @@ oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 exports.handler = async (event) => {
 	try {
 		let data = JSON.parse(event.body);
-		console.log(data);
 		let accessToken = await oAuth2Client.getAccessToken();
-		console.log("accessToken: ", accessToken);
 		let transporter = nodemailer.createTransport({
-			// name: "www.erikhvam.no",
-			// host: "smtp.gmail.com",
-			// port: "587",
-			// secure: true,
 			service: "gmail",
-			debug: true,
-			logger: true,
 			auth: {
 				type: "OAuth2",
 				user: "erikhvamdev@gmail.com",
@@ -41,7 +33,6 @@ exports.handler = async (event) => {
 				// pass: process.env.password,
 			},
 		});
-		console.log("hei");
 
 		const mailOptions = {
 			from: "erikhvamdev@gmail.com",
@@ -56,7 +47,6 @@ exports.handler = async (event) => {
 		};
 
 		const result = await transporter.sendMail(mailOptions);
-		console.log(result);
 		return (
 			null,
 			{
