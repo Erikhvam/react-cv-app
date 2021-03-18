@@ -24,8 +24,6 @@ exports.handler = async (event) => {
 		let transporter = nodemailer.createTransport({
 			host: "smtp.gmail.com",
 			port: "587",
-			logger: "true",
-			debug: "true",
 			auth: {
 				type: "OAuth2",
 				user: "erikhvamdev@gmail.com",
