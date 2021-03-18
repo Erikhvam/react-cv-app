@@ -27,6 +27,8 @@ exports.handler = async (event) => {
 			// port: "587",
 			// secure: true,
 			service: "gmail",
+			debug: true,
+			logger: true,
 			auth: {
 				type: "OAuth2",
 				user: "erikhvamdev@gmail.com",
