@@ -36,7 +36,7 @@ exports.handler = async (event) => {
 		console.log("hei");
 		transporter.sendMail(
 			{
-				from: `${data.email}`,
+				from: "erikhvamdev@gmail.com",
 				to: "erikhvamdev@gmail.com",
 				subject: `${data.subject}`,
 				html: `
