@@ -15,7 +15,7 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event) => {
 	try {
 		let data = JSON.parse(event.body);
 		console.log(data);
@@ -48,16 +48,19 @@ exports.handler = async (event, context, callback) => {
 			function (error, info) {
 				if (error) {
 					console.log("Hallo");
-					callback(error);
+					return error;
 					console.log(error);
 				} else {
 					console.log("success");
-					callback(null, {
-						statusCode: 200,
-						body: JSON.stringify({
-							result: "success",
-						}),
-					});
+					return (
+						null,
+						{
+							statusCode: 200,
+							body: JSON.stringify({
+								result: "success",
+							}),
+						}
+					);
 				}
 			}
 		);
