@@ -164,14 +164,14 @@ const Navbar = () => {
 				</li>
 				<li>
 					<a
-						href="#services"
+						href="#ambisjoner"
 						onClick={(e) => {
-							menuOnClick(e, "services");
+							menuOnClick(e, "ambisjoner");
 							removeClass();
 						}}
 						className="link services"
 					>
-						<span>Services</span>
+						<span>Ambisjoner</span>
 					</a>
 				</li>
 				<li>

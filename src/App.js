@@ -4,7 +4,7 @@ import "./App.scss";
 import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/Home/Home.js";
 import About from "./components/About/About.js";
-import Services from "./components/Services/Services.js";
+import Ambisjoner from "./components/Ambisjoner/Ambisjoner.js";
 import Form from "./components/Contact/Contact.js";
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
 			<Navbar />
 			<Home />
 			<About />
-			<Services />
+			<Ambisjoner />
 			<Form />
 		</div>
 	);
