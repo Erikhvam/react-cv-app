@@ -9,25 +9,25 @@ export const Ambisjoner = () => {
 					<div className="ambisjoner__text">
 						<h1>Ambisjoner</h1>
 						<p>
-							Jeg startet med å lære med å programmere i slutten av 2020. På
+							Jeg startet med å lære meg å programmere i slutten av 2020. På
 							dette tidspunktet kunne jeg ingenting, så jeg begynte med å lære
 							meg HTML, CSS og JavaScript via diverse kurs og tutorials på
 							nettet.
 						</p>
 						<br></br>
 						<p>
-							Etter hvert begynte jeg å titte på et React, da dette ser ut som
-							et spennende bibliotek og et naturlig steg videre fra Javascript
-							og HTML. I tillegg til dette ser jeg også at svært mange
+							Etter hvert begynte jeg å titte på React, da dette ser ut som et
+							spennende bibliotek og et naturlig steg videre fra Javascript og
+							HTML. I tillegg til dette ser jeg også at svært mange
 							arbeidsgivere der ute ser etter utviklere som behersker dette, som
 							gjør det enda mer lukerativt.
 						</p>
 						<br></br>
 						<p>
-							Mitt mål er å bli en fullstack-utvikler. Steg jeg har tatt i mot å
-							nå dette er å titte smått på Node.js og Express (MERN), da dette
-							også var et naturlig steg videre med tanke på at de skriver sin
-							backend også i JavaScript.
+							Mitt mål er å bli en fullstack-utvikler. Steg jeg har tatt for å
+							nå dette målet er å titte smått på Node.js og Express (MERN), da
+							dette også var et naturlig steg videre med tanke på at dette også
+							skrives i Javascript.
 						</p>
 					</div>
 					<div className="chart__wrap">
