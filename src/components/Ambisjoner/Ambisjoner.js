@@ -20,7 +20,7 @@ export const Ambisjoner = () => {
 							spennende bibliotek og et naturlig steg videre fra Javascript og
 							HTML. I tillegg til dette ser jeg også at svært mange
 							arbeidsgivere der ute ser etter utviklere som behersker dette, som
-							gjør det enda mer lukerativt.
+							gjør det enda mer lukrativt.
 						</p>
 						<br></br>
 						<p>
